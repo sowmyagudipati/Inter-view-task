@@ -1,0 +1,61 @@
+<div class="card" *ngIf="product">
+    <div class="card-image-div">
+        <img class="card-image" src="{{product.attributes.image}}">
+    </div>
+    <div class="card-details">
+        <div class="item-heading">{{product.productName}}</div>
+        <div class="remove-link"> <a [ngClass]="{'disabled' : !canRemoveProduct, 'c-hand':canRemoveProduct}" (click)="RemoveProduct()">Remove product</a></div>
+        <div class="item-attr">Attribute1: {{product.attributes.attribute1}}</div>
+        <div class="remove-link1"><button class="ico-btn"><i class="far fa-heart bnt-ico-p5"></i> Add to
+                favorite</button></div>
+        <div class="item-attr">Attribute2: {{product.attributes.attribute2}}</div>
+        <div class="remove-link1"><button class="ico-btn"><i class="far fa-file-code bnt-ico-p5"></i> Add to
+                compare</button></div>
+        <div class="item-attr1">
+            <div>Attribute3: {{product.attributes.attribute3}}</div>
+            <div class="shipping-details"><i class="fas fa-truck ship-icon"></i>Usually {{product.deliveryTime}}</div>
+        </div>
+        <div class="remove-link1"><button class="ico-btn"><i class="far fa-plus-square bnt-ico-p5"></i> Shortlist
+                product</button></div>
+        <div class="item-attr1">
+            <div>{{product.minOrders}} pieces (Min. Order)</div>
+            <div class="shipping-details">
+                <fieldset class="rate" [formGroup]="ratingForm">
+                    <input type="radio" id="rating10" formControlName="rating" value="5"
+                        [(ngModel)]="product.productRating" (click)="onStarClick('5')" /><i for="rating10" class="fas fa-star" title="5 stars"></i>
+                    <input type="radio" id="rating9" formControlName="rating" value="4.5"
+                        [(ngModel)]="product.productRating" (click)="onStarClick('4.5')" /><i  class="half fas fa-star-half-alt" for="rating9"
+                        title="4 1/2 stars"></i>
+                    <input type="radio" id="rating8" formControlName="rating" value="4"
+                        [(ngModel)]="product.productRating" (click)="onStarClick('4')" /><i for="rating8" class="fas fa-star" title="4 stars"></i>
+                    <input type="radio" id="rating7" formControlName="rating" value="3.5"
+                        [(ngModel)]="product.productRating" (click)="onStarClick('3.5')" /><i class="half fas fa-star-half-alt" for="rating7"
+                        title="3 1/2 stars"></i>
+                    <input type="radio" id="rating6" formControlName="rating" value="3"
+                        [(ngModel)]="product.productRating" (click)="onStarClick('3')"/><i  for="rating6" class="fas fa-star" title="3 stars"></i>
+                    <input type="radio" id="rating5" formControlName="rating" value="2.5"
+                        [(ngModel)]="product.productRating" (click)="onStarClick('2.5')" /><i  class="half fas fa-star-half-alt" for="rating5"
+                        title="2 1/2 stars"></i>
+                    <input type="radio" id="rating4" formControlName="rating" value="2"
+                        [(ngModel)]="product.productRating" (click)="onStarClick('2')"/><i  for="rating4" class="fas fa-star" title="2 stars"></i>
+                    <input type="radio" id="rating3" formControlName="rating" value="1.5"
+                        [(ngModel)]="product.productRating" (click)="onStarClick('1.5')" /><i class="half fas fa-star-half-alt" for="rating3"
+                        title="1 1/2 stars"></i>
+                    <input type="radio" id="rating2" formControlName="rating" value="1"
+                        [(ngModel)]="product.productRating" (click)="onStarClick('1')"/><i  for="rating2" class="fas fa-star" title="1 star"></i>
+                    <input type="radio" id="rating1" formControlName="rating" value="0.5"
+                        [(ngModel)]="product.productRating" (click)="onStarClick('0.5')"/><i  class="half fas fa-star-half-alt" for="rating1"
+                        title="1/2 star"></i>
+                </fieldset>
+            </div>
+        </div>
+        <div class="remove-link1"><button class="ico-btn"><i class="fas fa-cart-plus bnt-ico-p5"></i> Add to
+                cart</button></div>
+        <div class="item-attr1">
+            <div><i class="fas fa-map-marker-alt loc-icon"></i> {{product.location}}</div>
+            <div class="shipping-details"><button class="ico-btn t-center">Ask for price</button></div>
+        </div>
+        <div class="remove-link1"><button class="ico-btn"><i class="far fa-question-circle bnt-ico-p5"></i> Contact
+                seller</button></div>
+    </div>
+</div>

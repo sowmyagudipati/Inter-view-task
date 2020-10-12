@@ -1,0 +1,81 @@
+.wrapper {
+    display: flex;  
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .wrapper > * {
+    padding: 10px;
+  }
+
+  .main {
+    text-align: left;
+  }
+  .formWrapper{
+      display: flex;
+      justify-content: space-between;
+  }
+  .fealdsWrapper{
+    display: flex;
+      flex-flow: row wrap;   
+      align-items: center;
+  }
+ .fealdsWrapper > div
+  {
+    flex:1 1 auto;
+    margin:2px;  /* and that, will result in a 10px gap */
+  }
+  .Imgpreview{
+      width: 30%;
+  }
+  @media all and (min-width: 600px) {
+    .aside { flex: 1 0 0; }
+  }
+  
+  @media all and (min-width: 800px) {
+    .main    { flex: 5 0px; }
+    .aside-1 { order: 1; } 
+    .main    { order: 2; }
+    .aside-2 { order: 3; }
+  }
+  input[type=text]
+  {
+    padding: 5px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+
+  }
+  
+.btn {
+    font-family: Overpass;
+    font-style: normal;
+    font-weight: normal;
+    border-radius: 5px;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .btn-red{
+    background-color:rgba(222, 79, 96, 0.1);
+    border: 1px solid #DE4F60;
+    color: #DE4F60;
+  }
+
+  .btn-green{
+    background-color: rgb(14, 133, 67, 0.1);
+    border: 1px solid #0E8543;
+    color: #0E8543;
+  }
+
+  input[type="submit"]:disabled {
+    cursor:not-allowed;
+  }

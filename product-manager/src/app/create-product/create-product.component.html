@@ -1,0 +1,46 @@
+<div class="wrapper">
+    <div class="main">
+        <div class="pt10">
+            <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+                <div class="formWrapper">
+                    <div class="fealdsWrapper">
+                        <div>
+                            <input type="text" formControlName="productName" placeholder="Product Name" />
+                        </div>
+                        <div>
+                            <input type="text" formControlName="imageUrl" placeholder="Image URl" />
+                        </div>
+                        <div>
+                            <input type="text" formControlName="attribute1" placeholder="Attribute 1" />
+                        </div>
+                        <div>
+                            <input type="text" formControlName="attribute2" placeholder="Attribute 2" />
+                        </div>
+                        <div>
+                            <input type="text" formControlName="attribute3" placeholder="Attribute 3" />
+                        </div>
+                        <div>
+                            <input type="text" formControlName="minOrders" placeholder="Min Orders" />
+                        </div>
+                        <div>
+                            <input type="text" formControlName="deliveryTime" placeholder="Delivery Time" />
+                        </div>
+                        <div>
+                            <input type="text" formControlName="location" placeholder="Location" /></div>
+                        <div>
+                            <input type="text" formControlName="productRating" placeholder="Product Rating" />
+                        </div>
+                        <div>
+                            <input type="text" formControlName="productPrice" placeholder="Product Price" />
+                        </div>
+                        <div style=" flex-basis: 48%"><input type="submit" class="btn btn-green" value="Save" [disabled]="!productForm.valid" />
+                            <button class="btn btn-red" (click)="cancle()">cancel</button></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="aside aside-1"></div>
+    <div class="aside aside-2 ta-left">
+    </div>
+</div>

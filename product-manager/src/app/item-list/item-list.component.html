@@ -1,0 +1,22 @@
+<div class="wrapper">
+    <div class="main">
+        <div *ngFor="let product of displayProducts" class="pt10">
+            <app-item [product]="product" [canRemoveProduct]="canRemoveProduct" (deleteProduct)="deleteProduct()">
+            </app-item>
+        </div>
+        <div class="pt10 paginationWrapper">
+            <app-pagination [itemsPerPage]="itemsPerPage" [totalItems]="totalItems" (pageChange)="onPageChange($event)">
+            </app-pagination>
+        </div>
+    </div>
+    <div class="aside aside-1"></div>
+    <div class="aside aside-2 ta-left">
+        <div class="pt10">
+            <button class="btn btn-green" (click)="addProduct()"> Add Product</button>
+            <button class="btn bnt-red" (click)="allowRemoveProducts()"> Remove Products</button>
+        </div>
+    </div>
+</div>
+<jw-modal id="custom-modal-1">
+    <app-create-product (addProduct)="handelAddedProduct($event)"></app-create-product>
+</jw-modal>

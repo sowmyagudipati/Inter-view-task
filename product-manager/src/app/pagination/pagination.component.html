@@ -1,0 +1,6 @@
+<div class="pagination">
+    <a *ngFor="let page of pages" [ngClass]="{'active' : page === activePage}" (click)="onPageChange(page)">
+        {{page}}
+    </a>
+    <a *ngIf="showNext" class="next" (click)="onNextClick()">Next</a>
+</div>
